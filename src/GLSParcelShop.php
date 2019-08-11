@@ -9,14 +9,29 @@ use Signifly\ParcelShop\Contracts\ParcelShop as Contract;
 
 class GLSParcelShop implements Contract
 {
-    /** @var \Zend\Soap\Client */
+    /**
+     * The Soap client instance.
+     *
+     * @var \Zend\Soap\Client
+     */
     protected $client;
 
+    /**
+     * Create a new GLSParcelShop instance.
+     *
+     * @param \Zend\Soap\Client $client
+     */
     public function __construct(Client $client)
     {
         $this->client = $client;
     }
 
+    /**
+     * Retrieve all parcel shops for a specific country.
+     *
+     * @param  string $countryCode
+     * @return \Illuminate\Support\Collection
+     */
     public function all(string $countryCode): Collection
     {
         $response = $this->client->GetAllParcelShops([
@@ -29,6 +44,12 @@ class GLSParcelShop implements Contract
             });
     }
 
+    /**
+     * Find a given parcel shop by its number.
+     *
+     * @param  string|int $shopNumber
+     * @return ParcelShop
+     */
     public function find($shopNumber): ParcelShop
     {
         $response = $this->client->GetOneParcelShop([
@@ -38,6 +59,15 @@ class GLSParcelShop implements Contract
         return new ParcelShop((array) $response->GetOneParcelShopResult);
     }
 
+    /**
+     * Retrieve parcel shops near an address.
+     *
+     * @param  string      $streetName
+     * @param  string      $zipCode
+     * @param  string      $countryCode
+     * @param  int $amount
+     * @return \Illuminate\Support\Collection
+     */
     public function nearest(
         string $streetName,
         string $zipCode,
@@ -57,6 +87,13 @@ class GLSParcelShop implements Contract
             });
     }
 
+    /**
+     * Retrieve parcel shops within a given zip code and country code.
+     *
+     * @param  string $zipCode
+     * @param  string $countryCode
+     * @return \Illuminate\Support\Collection
+     */
     public function within(string $zipCode, string $countryCode): Collection
     {
         $response = $this->client->GetParcelShopsInZipcode([
