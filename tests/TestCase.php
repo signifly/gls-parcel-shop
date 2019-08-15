@@ -2,8 +2,8 @@
 
 namespace Signifly\ParcelShop\Tests;
 
-use Signifly\ParcelShop\ParcelShopServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
+use Signifly\ParcelShop\ParcelShopServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
