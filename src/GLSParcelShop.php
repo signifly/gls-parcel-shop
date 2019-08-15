@@ -38,10 +38,9 @@ class GLSParcelShop implements Contract
             'countryIso3166A2' => $countryCode,
         ]);
 
-        return collect(data_get($response, $this->getAllDataKey()))
-            ->map(function ($data) {
-                return new ParcelShop((array) $data);
-            });
+        return $this->transformCollection(
+            data_get($response, $this->getAllDataKey())
+        );
     }
 
     /**
@@ -81,10 +80,9 @@ class GLSParcelShop implements Contract
             'Amount' => $amount,
         ]);
 
-        return collect(data_get($response, $this->getNearestDataKey()))
-            ->map(function ($data) {
-                return new ParcelShop((array) $data);
-            });
+        return $this->transformCollection(
+            data_get($response, $this->getNearestDataKey())
+        );
     }
 
     /**
@@ -101,10 +99,9 @@ class GLSParcelShop implements Contract
             'countryIso3166A2' => $countryCode,
         ]);
 
-        return collect(data_get($response, $this->getWithinDataKey()))
-            ->map(function ($data) {
-                return new ParcelShop((array) $data);
-            });
+        return $this->transformCollection(
+            data_get($response, $this->getWithinDataKey())
+        );
     }
 
     protected function getAllDataKey(): string
@@ -120,5 +117,13 @@ class GLSParcelShop implements Contract
     protected function getWithinDataKey(): string
     {
         return 'GetParcelShopsInZipcodeResult.PakkeshopData';
+    }
+
+    protected function transformCollection(array $items): Collection
+    {
+        return collect($items)
+            ->map(function ($item) {
+                return new ParcelShop((array) $data);
+            });
     }
 }
