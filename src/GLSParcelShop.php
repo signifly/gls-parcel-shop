@@ -99,8 +99,10 @@ class GLSParcelShop implements Contract
             'countryIso3166A2' => $countryCode,
         ]);
 
+        $items = data_get($response, $this->getWithinDataKey());
+
         return $this->transformCollection(
-            data_get($response, $this->getWithinDataKey())
+            is_array($items) ? $items : [$items]
         );
     }
 
@@ -123,7 +125,7 @@ class GLSParcelShop implements Contract
     {
         return collect($items)
             ->map(function ($item) {
-                return new ParcelShop((array) $data);
+                return new ParcelShop((array) $item);
             });
     }
 }
