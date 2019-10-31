@@ -1,5 +1,11 @@
 # GLS Parcel Shop
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/signifly/gls-parcel-shop.svg?style=flat-square)](https://packagist.org/packages/signifly/gls-parcel-shop)
+[![Build Status](https://img.shields.io/travis/signifly/gls-parcel-shop/master.svg?style=flat-square)](https://travis-ci.org/signifly/gls-parcel-shop)
+[![StyleCI](https://styleci.io/repos/218710533/shield?branch=master)](https://styleci.io/repos/218710533)
+[![Quality Score](https://img.shields.io/scrutinizer/g/signifly/gls-parcel-shop.svg?style=flat-square)](https://scrutinizer-ci.com/g/signifly/gls-parcel-shop)
+[![Total Downloads](https://img.shields.io/packagist/dt/signifly/gls-parcel-shop.svg?style=flat-square)](https://packagist.org/packages/signifly/gls-parcel-shop)
+
 The `signifly/gls-parcel-shop` package is a simple wrapper for the GLS Parcel Shop Webservice written in PHP with a service provider for Laravel.
 
 ## Basic Usage
