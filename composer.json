@@ -1,7 +1,7 @@
 {
     "name": "signifly/gls-parcel-shop",
-    "description": "A simple wrapper for GLS Parcel Shop API",
-    "homepage": "https://github.com/signifly/gls-parcel-shop-api",
+    "description": "A simple wrapper for GLS Parcel Shop Webservice",
+    "homepage": "https://github.com/signifly/gls-parcel-shop",
     "license": "MIT",
     "authors": [
         {
