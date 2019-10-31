@@ -1,6 +1,6 @@
-# GLS Parcel Shop API
+# GLS Parcel Shop
 
-The `signifly/gls-parcel-shop-api` package is a simple wrapper for the GLS Parcel Shop Webservice written in PHP with a service provider for Laravel.
+The `signifly/gls-parcel-shop` package is a simple wrapper for the GLS Parcel Shop Webservice written in PHP with a service provider for Laravel.
 
 ## Basic Usage
 
@@ -77,7 +77,7 @@ $client->within('1620', 'DK'); // returns Illuminate\Support\Collection
 You can install the package via composer:
 
 ```bash
-composer require signifly/gls-parcel-shop-api
+composer require signifly/gls-parcel-shop
 ```
 
 The package will automatically register itself.

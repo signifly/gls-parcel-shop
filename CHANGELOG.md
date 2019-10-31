@@ -6,8 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.0.1]
+## [0.0.1] - 2019-10-31
 - Experimental release!
 
-[Unreleased]: https://github.com/signifly/gls-parcel-shop-api/compare/v0.0.1...HEAD
-[0.0.1]: https://github.com/signifly/gls-parcel-shop-api/releases/tag/v0.0.1
+[Unreleased]: https://github.com/signifly/gls-parcel-shop/compare/v0.0.1...HEAD
+[0.0.1]: https://github.com/signifly/gls-parcel-shop/releases/tag/v0.0.1
