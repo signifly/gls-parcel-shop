@@ -27,6 +27,22 @@ class GLSParcelShop implements Contract
     }
 
     /**
+     * Instantiate using only an endpoint.
+     *
+     * @param  string|null $endpoint
+     * @return self
+     */
+    public static function make(?string $endpoint = null): self
+    {
+        $client = new Client($endpoint ?? 'http://www.gls.dk/webservices_v4/wsShopFinder.asmx?WSDL', [
+            'connection_timeout' => 60,
+            'keep_alive' => false,
+        ]);
+
+        return new self($client);
+    }
+
+    /**
      * Retrieve all parcel shops for a specific country.
      *
      * @param  string $countryCode

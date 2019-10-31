@@ -30,12 +30,7 @@ class ParcelShopServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(ParcelShop::class, function () {
-            return new GLSParcelShop(
-                new Client(config('parcel-shop.endpoint') ?: $this->defaultEndpoint, [
-                    'connection_timeout' => 60,
-                    'keep_alive' => false,
-                ])
-            );
+            return GLSParcelShop::make(config('parcel-shop.endpoint'));
         });
     }
 }

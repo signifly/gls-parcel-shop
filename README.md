@@ -8,7 +8,28 @@
 
 The `signifly/gls-parcel-shop` package is a simple wrapper for the GLS Parcel Shop Webservice written in PHP with a service provider for Laravel.
 
-## Basic Usage
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+
+## Installation
+
+You can install the package via composer:
+
+```bash
+composer require signifly/gls-parcel-shop
+```
+
+The package will automatically register itself.
+
+
+You can optionally publish the config file with:
+
+```bash
+php artisan vendor:publish --tag="parcel-shop-config"
+```
+
+## Usage
 
 The GLS Parcel Shop webservice allows you to retrieve the following information:
 - All parcel shops for a given country
@@ -21,12 +42,7 @@ The GLS Parcel Shop webservice allows you to retrieve the following information:
 *This can be skipped in Laravel as the client is bound to the service container.*
 
 ```php
-$client = new GLSParcelShop(
-    new \Zend\Soap\Client('http://www.gls.dk/webservices_v4/wsShopFinder.asmx?WSDL', [
-        'connection_timeout' => 60,
-        'keep_alive' => false,
-    ])
-)
+$client = GLSParcelShop::make('http://www.gls.dk/webservices_v4/wsShopFinder.asmx?WSDL');
 ```
 
 **Resolving it from the Laravel Service Container**
@@ -87,24 +103,8 @@ $client->nearest('Vesterbrogade 44', '1620', 'DK', 10); // returns Illuminate\Su
 $client->within('1620', 'DK'); // returns Illuminate\Support\Collection
 ```
 
-## Installation
-
-You can install the package via composer:
-
-```bash
-composer require signifly/gls-parcel-shop
-```
-
-The package will automatically register itself.
-
-
-You can optionally publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="parcel-shop-config"
-```
-
 ## Testing
+
 ```bash
 composer test
 ```
