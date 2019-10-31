@@ -11,6 +11,7 @@ The GLS Parcel Shop webservice allows you to retrieve the following information:
 - Find parcel shops within a specific zip code, country
 
 **Setting up the client**
+
 *This can be skipped in Laravel as the client is bound to the service container.*
 
 ```php
@@ -20,6 +21,14 @@ $client = new GLSParcelShop(
         'keep_alive' => false,
     ])
 )
+```
+
+**Resolving it from the Laravel Service Container**
+
+```php
+use Signifly\ParcelShop\Contracts\ParcelShop;
+
+$client = app(ParcelShop::class);
 ```
 
 **Get all parcel shops**
