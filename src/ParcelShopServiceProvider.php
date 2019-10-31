@@ -2,7 +2,6 @@
 
 namespace Signifly\ParcelShop;
 
-use Zend\Soap\Client;
 use Illuminate\Support\ServiceProvider;
 use Signifly\ParcelShop\Contracts\ParcelShop;
 
