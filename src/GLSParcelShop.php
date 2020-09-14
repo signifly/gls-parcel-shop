@@ -2,24 +2,24 @@
 
 namespace Signifly\ParcelShop;
 
-use Zend\Soap\Client;
 use Illuminate\Support\Collection;
-use Signifly\ParcelShop\Resources\ParcelShop;
+use Laminas\Soap\Client;
 use Signifly\ParcelShop\Contracts\ParcelShop as Contract;
+use Signifly\ParcelShop\Resources\ParcelShop;
 
 class GLSParcelShop implements Contract
 {
     /**
      * The Soap client instance.
      *
-     * @var \Zend\Soap\Client
+     * @var \Laminas\Soap\Client
      */
     protected $client;
 
     /**
      * Create a new GLSParcelShop instance.
      *
-     * @param \Zend\Soap\Client $client
+     * @param \Laminas\Soap\Client $client
      */
     public function __construct(Client $client)
     {
